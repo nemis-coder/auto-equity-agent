@@ -1,0 +1,64 @@
+[project]
+name = "auto-equity-agent"
+version = "0.1.0"
+description = "Agente de Auto Equity: elegibilidad, perfilamiento, simulación y comprobantes."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic>=2",
+    "pydantic-settings",
+    "sqlalchemy[asyncio]>=2",
+    "psycopg[binary]>=3",
+    "alembic",
+    "boto3",
+    "minio",
+    "langgraph",
+    "langchain-anthropic",
+    "langchain-openai==1.6.6",
+    "openai==3.19.2",
+    "langfuse>=3",
+    "httpx",
+    "pillow",
+    "pypdf",
+    "pypdfium2",
+    "python-multipart",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["tests"]
+cache_dir = "/tmp/.pytest_cache"
+markers = [
+    "integration: requiere PostgreSQL y MinIO reales (TEST_DATABASE_URL, S3_*)",
+]
+
+[tool.ruff]
+line-length = 100
+# El contenedor corre como usuario sin privilegios sobre /app: la caché va a /tmp (como pytest).
+cache-dir = "/tmp/.ruff_cache"
+target-version = "py312"
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106"]

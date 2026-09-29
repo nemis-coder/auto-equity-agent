@@ -1,0 +1,36 @@
+# syntax=docker/dockerfile:1.7
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+WORKDIR /app
+
+# extra_ca: CA opcional para redes con proxy TLS corporativo. Sin el secreto, no se usa.
+COPY requirements/api.lock requirements/dev.lock requirements/
+ARG INSTALL_DEV=true
+RUN --mount=type=secret,id=extra_ca,required=false \
+    if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi; \
+    if [ "$INSTALL_DEV" = "true" ]; then LOCK=requirements/dev.lock; else LOCK=requirements/api.lock; fi; \
+    pip install --require-hashes -r "$LOCK"
+
+COPY pyproject.toml alembic.ini .env.example ./
+COPY app ./app
+COPY config ./config
+COPY fixtures ./fixtures
+COPY migrations ./migrations
+COPY scripts ./scripts
+COPY tests ./tests
+COPY evals ./evals
+# El agente de la conversación: la evaluación ejecuta el mismo grafo que sirve Aegra.
+COPY conversation/server/graph.py ./conversation/server/graph.py
+
+RUN useradd --create-home --uid 10001 appuser \
+    && mkdir -p /data /app/reports \
+    && chown -R appuser /data /app/reports
+USER appuser
+
+EXPOSE 8000
+CMD ["uvicorn", "app.api.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]

@@ -1,0 +1,7 @@
+{
+  "_comment": "Cotizador sintético de la financiera (sistema externo simulado). Decide los montos, plazos y el calendario de pagos de cada opción. No es una tarifa de Kavak/Kuna.",
+  "cash_amounts": ["25000.00", "50000.00", "75000.00", "100000.00"],
+  "terms_months": [12, 24],
+  "max_payment_to_income_ratio": "0.30",
+  "validity_days": 7
+}

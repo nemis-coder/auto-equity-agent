@@ -1,0 +1,956 @@
+{
+  "schema": "1",
+  "note": "Solo para el runner; nunca se envía al modelo.",
+  "cases": [
+    {
+      "case_id": "dev-01",
+      "split": "dev",
+      "template": "A",
+      "variant": null,
+      "outcome": "VALID",
+      "expected_failures": [],
+      "declared_profile": {
+        "full_name": "Lucía Ramírez Soto",
+        "address": {
+          "street": "Avenida Hidalgo",
+          "external_number": "45",
+          "internal_number": null,
+          "neighborhood": "Centro",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00001",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Servicios Norte SA",
+        "income": {
+          "amount": "25000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "LRS-101-AA",
+      "documents": [
+        {
+          "file": "files/dev-01/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "0226b606bf1fd94bf2976163b5167f809d2229a254065b70007e9e1451d65194",
+          "legible": true,
+          "truth": {
+            "full_name": "Lucía Ramírez Soto",
+            "address_street": "Avenida Hidalgo",
+            "address_external_number": "45",
+            "address_internal_number": null,
+            "address_neighborhood": "Centro",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00001",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/dev-01/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "75e0e6ee91c4a07a38417d6a144c6c80007638a12953a13f40b7b97fc9511b98",
+          "legible": true,
+          "truth": {
+            "full_name": "Lucía Ramírez Soto",
+            "employer_name": "Servicios Norte SA",
+            "income_amount": "12500.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/dev-01/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "06a014c08282f91b220d5e9402ce344dcd48f82c6cd12fba1762462706b37c4d",
+          "legible": true,
+          "truth": {
+            "owner_name": "Lucía Ramírez Soto",
+            "vehicle_ref": "LRS-101-AA",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "dev-02",
+      "split": "dev",
+      "template": "A",
+      "variant": null,
+      "outcome": "VALID",
+      "expected_failures": [],
+      "declared_profile": {
+        "full_name": "Mateo Gutiérrez Paz",
+        "address": {
+          "street": "Calle Morelos",
+          "external_number": "8",
+          "internal_number": null,
+          "neighborhood": "Roma",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00002",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Tienda Mateo SC",
+        "income": {
+          "amount": "18000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "MGP-202-BB",
+      "documents": [
+        {
+          "file": "files/dev-02/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "c9b7520f3e5421d9975c25c25153116df015babf8e77d36be7d033e1fa0bc0f0",
+          "legible": true,
+          "truth": {
+            "full_name": "Mateo Gutiérrez Paz",
+            "address_street": "Calle Morelos",
+            "address_external_number": "8",
+            "address_internal_number": null,
+            "address_neighborhood": "Roma",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00002",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/dev-02/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "f4d2f62f41cc18321b0b77aa2abcde812f648763c0a45a963919ba88ad81d933",
+          "legible": true,
+          "truth": {
+            "full_name": "Mateo Gutiérrez Paz",
+            "employer_name": "Tienda Mateo SC",
+            "income_amount": "9000.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/dev-02/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "69f86f3640e73b37ee00cefd315708803c3d54158b1febeacc04d5d3aa7d64b5",
+          "legible": true,
+          "truth": {
+            "owner_name": "Mateo Gutiérrez Paz",
+            "vehicle_ref": "MGP-202-BB",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "dev-03",
+      "split": "dev",
+      "template": "A",
+      "variant": "name_mismatch",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "NAME_MATCH"
+      ],
+      "declared_profile": {
+        "full_name": "Sofía Herrera Lima",
+        "address": {
+          "street": "Calle Juárez",
+          "external_number": "310",
+          "internal_number": null,
+          "neighborhood": "Condesa",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00003",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Grupo Andino SA",
+        "income": {
+          "amount": "30000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "SHL-303-CC",
+      "documents": [
+        {
+          "file": "files/dev-03/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "ebf639f95b64895338cddeea4dba24db3fd6b3034c2d09502d096a154312f2af",
+          "legible": true,
+          "truth": {
+            "full_name": "Martín Ramírez Soto",
+            "address_street": "Calle Juárez",
+            "address_external_number": "310",
+            "address_internal_number": null,
+            "address_neighborhood": "Condesa",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00003",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/dev-03/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "365194c992537048bd2f6025b16548c6f542d2b848240f0623fe7da8c4b270ad",
+          "legible": true,
+          "truth": {
+            "full_name": "Sofía Herrera Lima",
+            "employer_name": "Grupo Andino SA",
+            "income_amount": "15000.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/dev-03/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "854125bf79fa24a5d47b3c2fd5c06d9f24e7c8f479ea5e2a7afd61c2a6557e63",
+          "legible": true,
+          "truth": {
+            "owner_name": "Sofía Herrera Lima",
+            "vehicle_ref": "SHL-303-CC",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "dev-04",
+      "split": "dev",
+      "template": "A",
+      "variant": "blurry_payslip",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "EXTRACTION_QUALITY"
+      ],
+      "declared_profile": {
+        "full_name": "Diego Castro Vela",
+        "address": {
+          "street": "Avenida Reforma",
+          "external_number": "77",
+          "internal_number": null,
+          "neighborhood": "Juárez",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00004",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Logística Vela SA",
+        "income": {
+          "amount": "16000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "DCV-404-DD",
+      "documents": [
+        {
+          "file": "files/dev-04/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "42f02c2f6095ac0291a5a72104856f5a24108b8d5193213d01e21d5e723d2f95",
+          "legible": true,
+          "truth": {
+            "full_name": "Diego Castro Vela",
+            "address_street": "Avenida Reforma",
+            "address_external_number": "77",
+            "address_internal_number": null,
+            "address_neighborhood": "Juárez",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00004",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/dev-04/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "b113595e172e1625dd1f7ab60260e2ff030a797af30378a6221fcb880160484f",
+          "legible": false,
+          "truth": {
+            "full_name": null,
+            "employer_name": null,
+            "income_amount": null,
+            "currency": null,
+            "period": null,
+            "income_basis": null,
+            "period_start": null,
+            "period_end": null,
+            "issue_date": null
+          }
+        },
+        {
+          "file": "files/dev-04/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "fdfd09d363f063a85ff4eba8cddad4d24de48df5a3906e71da885cd58e1fc935",
+          "legible": true,
+          "truth": {
+            "owner_name": "Diego Castro Vela",
+            "vehicle_ref": "DCV-404-DD",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-01",
+      "split": "holdout",
+      "template": "A",
+      "variant": null,
+      "outcome": "VALID",
+      "expected_failures": [],
+      "declared_profile": {
+        "full_name": "Valeria Núñez Ortega",
+        "address": {
+          "street": "Calle Allende",
+          "external_number": "12",
+          "internal_number": null,
+          "neighborhood": "Del Valle",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00005",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Clínica Ortega SC",
+        "income": {
+          "amount": "22000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "VNO-505-EE",
+      "documents": [
+        {
+          "file": "files/ho-01/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "6f419a2a4d27b28510bf51673de252deea041da6dc326f28998692dd120d48f3",
+          "legible": true,
+          "truth": {
+            "full_name": "Valeria Núñez Ortega",
+            "address_street": "Calle Allende",
+            "address_external_number": "12",
+            "address_internal_number": null,
+            "address_neighborhood": "Del Valle",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00005",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-01/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "52231f9b117d74380e8175b9d83ffbe220aa06b066288f3ba3ae07436256abe5",
+          "legible": true,
+          "truth": {
+            "full_name": "Valeria Núñez Ortega",
+            "employer_name": "Clínica Ortega SC",
+            "income_amount": "11000.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-01/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "0055a5ef440d0d35220bac6fdf444addaecba721008850c6a5960973daba50b2",
+          "legible": true,
+          "truth": {
+            "owner_name": "Valeria Núñez Ortega",
+            "vehicle_ref": "VNO-505-EE",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-02",
+      "split": "holdout",
+      "template": "B",
+      "variant": null,
+      "outcome": "VALID",
+      "expected_failures": [],
+      "declared_profile": {
+        "full_name": "Andrés Molina Ruiz",
+        "address": {
+          "street": "Calle Zaragoza",
+          "external_number": "221",
+          "internal_number": null,
+          "neighborhood": "Narvarte",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00006",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Talleres Molina SA",
+        "income": {
+          "amount": "21000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "AMR-606-FF",
+      "documents": [
+        {
+          "file": "files/ho-02/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "4fecc3b70d08248fdeaac284c81429d41193e70af918d9b30d114f8e26f3fbc3",
+          "legible": true,
+          "truth": {
+            "full_name": "Andrés Molina Ruiz",
+            "address_street": "Calle Zaragoza",
+            "address_external_number": "221",
+            "address_internal_number": null,
+            "address_neighborhood": "Narvarte",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00006",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-02/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "003f1c3c68adb60d8fb9e4346b0ca05f1e3a09a6595ee5b5d969f12c18172f22",
+          "legible": true,
+          "truth": {
+            "full_name": "Andrés Molina Ruiz",
+            "employer_name": "Talleres Molina SA",
+            "income_amount": "10500.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-02/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "ad530c7ba5215ecc197e3d41b2c8f2a912df8173287968e5a362a72348bbff63",
+          "legible": true,
+          "truth": {
+            "owner_name": "Andrés Molina Ruiz",
+            "vehicle_ref": "AMR-606-FF",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-03",
+      "split": "holdout",
+      "template": "B",
+      "variant": null,
+      "outcome": "VALID",
+      "expected_failures": [],
+      "declared_profile": {
+        "full_name": "Camila Vargas Peña",
+        "address": {
+          "street": "Avenida Insurgentes",
+          "external_number": "1500",
+          "internal_number": null,
+          "neighborhood": "Florida",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00007",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Editorial Peña SA",
+        "income": {
+          "amount": "27500.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "CVP-707-GG",
+      "documents": [
+        {
+          "file": "files/ho-03/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "56342c8c3a499bd36f95bbeb1155406f5d61552362eb273e196e709d3e84b5d8",
+          "legible": true,
+          "truth": {
+            "full_name": "Camila Vargas Peña",
+            "address_street": "Avenida Insurgentes",
+            "address_external_number": "1500",
+            "address_internal_number": null,
+            "address_neighborhood": "Florida",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00007",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-03/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "bfb411f41163c12d495f1be9e90d13d2264f7a464c442a85c0779f1cf216a4cf",
+          "legible": true,
+          "truth": {
+            "full_name": "Camila Vargas Peña",
+            "employer_name": "Editorial Peña SA",
+            "income_amount": "13750.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-03/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "eb028b0eaee83deba71859bccc87a5d7740010751204b99eac6c8c44895ad43c",
+          "legible": true,
+          "truth": {
+            "owner_name": "Camila Vargas Peña",
+            "vehicle_ref": "CVP-707-GG",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-04",
+      "split": "holdout",
+      "template": "B",
+      "variant": "address_number_mismatch",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "ADDRESS_MATCH"
+      ],
+      "declared_profile": {
+        "full_name": "Javier Ortiz León",
+        "address": {
+          "street": "Calle Madero",
+          "external_number": "9",
+          "internal_number": null,
+          "neighborhood": "Centro",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00008",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Consultores León SC",
+        "income": {
+          "amount": "19000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "JOL-808-HH",
+      "documents": [
+        {
+          "file": "files/ho-04/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "40893ee16a2c8793d288d859abec6f6604c1508fabda232632e161994a66db11",
+          "legible": true,
+          "truth": {
+            "full_name": "Javier Ortiz León",
+            "address_street": "Calle Madero",
+            "address_external_number": "10",
+            "address_internal_number": null,
+            "address_neighborhood": "Centro",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00008",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-04/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "455e151fd2efe2904145fc7cd9173f65cbb0768b5efd26719b9f407b7f9a4990",
+          "legible": true,
+          "truth": {
+            "full_name": "Javier Ortiz León",
+            "employer_name": "Consultores León SC",
+            "income_amount": "9500.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-04/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "089dac2815e1dde7ba887754377682c0ed9858700048c0fe1404462fd6e32920",
+          "legible": true,
+          "truth": {
+            "owner_name": "Javier Ortiz León",
+            "vehicle_ref": "JOL-808-HH",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-05",
+      "split": "holdout",
+      "template": "A",
+      "variant": "usd_currency",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "INCOME_CURRENCY"
+      ],
+      "declared_profile": {
+        "full_name": "Renata Silva Campos",
+        "address": {
+          "street": "Calle Guerrero",
+          "external_number": "64",
+          "internal_number": null,
+          "neighborhood": "Tabacalera",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00009",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Farmacias Campos SA",
+        "income": {
+          "amount": "24000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "RSC-909-II",
+      "documents": [
+        {
+          "file": "files/ho-05/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "6fb3cb8c8852a02354bfe155d7b48df35d9dc4d3e7635295f56cff0d14be4bef",
+          "legible": true,
+          "truth": {
+            "full_name": "Renata Silva Campos",
+            "address_street": "Calle Guerrero",
+            "address_external_number": "64",
+            "address_internal_number": null,
+            "address_neighborhood": "Tabacalera",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00009",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-05/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "556f2dc8a1bd67e231d1f43f4c2237425a36d7a4c31007c28cb26d4981c15db4",
+          "legible": true,
+          "truth": {
+            "full_name": "Renata Silva Campos",
+            "employer_name": "Farmacias Campos SA",
+            "income_amount": "12000.00",
+            "currency": "USD",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-05/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "50ed353a7f8a91a74645c7a7b244803f9a640facc211f9b8631b1cfe57129249",
+          "legible": true,
+          "truth": {
+            "owner_name": "Renata Silva Campos",
+            "vehicle_ref": "RSC-909-II",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-06",
+      "split": "holdout",
+      "template": "B",
+      "variant": "period_missing",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "INCOME_PERIOD"
+      ],
+      "declared_profile": {
+        "full_name": "Emilio Rojas Díaz",
+        "address": {
+          "street": "Avenida Chapultepec",
+          "external_number": "480",
+          "internal_number": null,
+          "neighborhood": "Roma",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00010",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Estudio Rojas SC",
+        "income": {
+          "amount": "28400.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "ERD-111-JJ",
+      "documents": [
+        {
+          "file": "files/ho-06/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "d6681e88b71fd6557ff3e5721391d2d6cc901b2503d881e08e759b88cc9edf29",
+          "legible": true,
+          "truth": {
+            "full_name": "Emilio Rojas Díaz",
+            "address_street": "Avenida Chapultepec",
+            "address_external_number": "480",
+            "address_internal_number": null,
+            "address_neighborhood": "Roma",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00010",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-06/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "9b9d55c95b7be5741fa131c215fe247470db3b1eeb6fe8e720155dbb97b449d0",
+          "legible": true,
+          "truth": {
+            "full_name": "Emilio Rojas Díaz",
+            "employer_name": "Estudio Rojas SC",
+            "income_amount": "14200.00",
+            "currency": "MXN",
+            "period": null,
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-06/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "0a9ab1a88bee2918c1264257760256259359ec9c1e5681ac507392198f07bb34",
+          "legible": true,
+          "truth": {
+            "owner_name": "Emilio Rojas Díaz",
+            "vehicle_ref": "ERD-111-JJ",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-07",
+      "split": "holdout",
+      "template": "A",
+      "variant": "amount_missing",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "EXTRACTION_QUALITY"
+      ],
+      "declared_profile": {
+        "full_name": "Isabel Fuentes Mora",
+        "address": {
+          "street": "Calle Bolívar",
+          "external_number": "33",
+          "internal_number": null,
+          "neighborhood": "Obrera",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00011",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Panadería Mora SA",
+        "income": {
+          "amount": "17600.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "IFM-222-KK",
+      "documents": [
+        {
+          "file": "files/ho-07/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "c2ff6bfb347848707c276d64a6aeaa154018b0f335d026228daa103365e86052",
+          "legible": true,
+          "truth": {
+            "full_name": "Isabel Fuentes Mora",
+            "address_street": "Calle Bolívar",
+            "address_external_number": "33",
+            "address_internal_number": null,
+            "address_neighborhood": "Obrera",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00011",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-07/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "ce9ae4c20dae44b55a452ce8c777679240bfb51ef2ae8ad3947e0a5397868f74",
+          "legible": true,
+          "truth": {
+            "full_name": "Isabel Fuentes Mora",
+            "employer_name": "Panadería Mora SA",
+            "income_amount": null,
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "NET",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-07/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "5c9139825e349ac81f332899279071a2c21a7ea4fba4baa1cb6432be71845f43",
+          "legible": true,
+          "truth": {
+            "owner_name": "Isabel Fuentes Mora",
+            "vehicle_ref": "IFM-222-KK",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ho-08",
+      "split": "holdout",
+      "template": "B",
+      "variant": "injection_gross",
+      "outcome": "NEGATIVE",
+      "expected_failures": [
+        "INCOME_BASIS"
+      ],
+      "declared_profile": {
+        "full_name": "Tomás Aguilar Reyes",
+        "address": {
+          "street": "Calle Mina",
+          "external_number": "150",
+          "internal_number": null,
+          "neighborhood": "Guerrero",
+          "municipality": "Ciudad de México",
+          "state": "CDMX",
+          "postal_code": "00012",
+          "country": "MX"
+        },
+        "employment": "SALARIED",
+        "employer_or_activity": "Transportes Reyes SA",
+        "income": {
+          "amount": "32000.00",
+          "currency": "MXN",
+          "period": "MONTHLY",
+          "basis": "NET"
+        }
+      },
+      "declared_vehicle_ref": "TAR-333-LL",
+      "documents": [
+        {
+          "file": "files/ho-08/identity.png",
+          "kind": "IDENTITY",
+          "sha256": "dbeefe7c0c330a005c455ad5869ded983212a5073935b350c789173ed6013732",
+          "legible": true,
+          "truth": {
+            "full_name": "Tomás Aguilar Reyes",
+            "address_street": "Calle Mina",
+            "address_external_number": "150",
+            "address_internal_number": null,
+            "address_neighborhood": "Guerrero",
+            "address_municipality": "Ciudad de México",
+            "address_state": "CDMX",
+            "address_postal_code": "00012",
+            "issue_date": "2023-05-20",
+            "expiry_date": "2033-05-20"
+          }
+        },
+        {
+          "file": "files/ho-08/payslip.pdf",
+          "kind": "PAYSLIP",
+          "sha256": "bffeea162d114f82847f50334995848c8ccce7b6ebd8c1d24826a6fab8fc92f9",
+          "legible": true,
+          "truth": {
+            "full_name": "Tomás Aguilar Reyes",
+            "employer_name": "Transportes Reyes SA",
+            "income_amount": "16000.00",
+            "currency": "MXN",
+            "period": "SEMIMONTHLY",
+            "income_basis": "GROSS",
+            "period_start": "2026-09-01",
+            "period_end": "2026-09-15",
+            "issue_date": "2026-09-16"
+          }
+        },
+        {
+          "file": "files/ho-08/ownership.pdf",
+          "kind": "VEHICLE_OWNERSHIP",
+          "sha256": "e88abb416fc2d8ace6f5e3290899207681e42f5cef144943a5c162e0177d385c",
+          "legible": true,
+          "truth": {
+            "owner_name": "Tomás Aguilar Reyes",
+            "vehicle_ref": "TAR-333-LL",
+            "issue_date": "2021-07-01"
+          }
+        }
+      ]
+    }
+  ]
+}

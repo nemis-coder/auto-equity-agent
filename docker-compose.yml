@@ -1,0 +1,215 @@
+name: auto-equity
+
+x-api-build: &api-build
+  build:
+    context: .
+    dockerfile: Dockerfile.api
+  image: auto-equity/api:local
+
+# minio-init y setup usan la imagen que construye `api` en lugar de construirla también: con el
+# almacén containerd (Docker Desktop) tres builds en paralelo de la misma etiqueta fallan con
+# «image already exists». `pull_policy: never` evita que Compose intente descargarla.
+x-api-image: &api-image
+  image: auto-equity/api:local
+  pull_policy: never
+
+x-db-url: &db-url postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  minio:
+    build:
+      context: infra/minio
+    image: auto-equity/minio:local
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9000/minio/health/live', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  # Único proceso, además de MinIO, con credenciales root: crea bucket privado y usuario de API.
+  minio-init:
+    <<: *api-image
+    command: ["python", "scripts/minio_bootstrap.py"]
+    environment:
+      S3_ENDPOINT_URL: ${S3_ENDPOINT_URL}
+      S3_REGION: ${S3_REGION}
+      S3_BUCKET: ${S3_BUCKET}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    depends_on:
+      minio:
+        condition: service_healthy
+    restart: "no"
+    networks: [internal]
+
+  # Migraciones y actores de demo, una sola vez antes de la API.
+  setup:
+    <<: *api-image
+    command: ["sh", "-c", "alembic upgrade head && python scripts/init_demo.py"]
+    environment:
+      DATABASE_URL: *db-url
+      DEMO_CREDENTIALS_PATH: ${DEMO_CREDENTIALS_PATH}
+    volumes:
+      - apidata:/data
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+    networks: [internal]
+
+  api:
+    <<: *api-build
+    environment:
+      APP_MODE: ${APP_MODE}
+      CLOCK_MODE: ${CLOCK_MODE:-system}
+      # Límites por actor; el perfil e2e los eleva para que el navegador automatizado no los
+      # agote (decisión 0028). El evaluador usa los valores por defecto.
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-30}
+      READ_RATE_LIMIT_PER_MINUTE: ${READ_RATE_LIMIT_PER_MINUTE:-120}
+      FIXED_NOW: ${FIXED_NOW:-}
+      DATABASE_URL: *db-url
+      DOCUMENT_STORE: ${DOCUMENT_STORE}
+      S3_ENDPOINT_URL: ${S3_ENDPOINT_URL}
+      S3_REGION: ${S3_REGION}
+      S3_BUCKET: ${S3_BUCKET}
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+      DEMO_CREDENTIALS_PATH: ${DEMO_CREDENTIALS_PATH}
+      TRACE_DIR: ${TRACE_DIR}
+      LANGFUSE_ENABLED: ${LANGFUSE_ENABLED}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY}
+      LANGFUSE_ENVIRONMENT: ${LANGFUSE_ENVIRONMENT}
+      MODEL_PRICES: ${MODEL_PRICES:-}
+      EXTRACTION_PROVIDER: ${EXTRACTION_PROVIDER}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-}
+    volumes:
+      - apidata:/data
+    ports:
+      - "127.0.0.1:${API_PORT}:8000"
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+      minio-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  # Conversación del cliente (decisión 0035): Agent Chat UI → Aegra → grafo `auto_equity`, que
+  # llama a la API con el token del cliente. Aegra guarda hilos y checkpoints en su propia base.
+  agent-db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: aegra
+      POSTGRES_USER: aegra
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - agentdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aegra -d aegra"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    networks: [internal]
+
+  agent:
+    build:
+      context: .
+      dockerfile: conversation/server/Dockerfile
+    image: auto-equity/agent:local
+    environment:
+      DATABASE_URL: postgresql://aegra:${POSTGRES_PASSWORD}@agent-db:5432/aegra
+      AUTO_EQUITY_API_URL: http://api:8000
+      # Proveedor y clave obligatorios para conversar: sin ellos el chat dice qué falta.
+      CHAT_PROVIDER: ${CHAT_PROVIDER:-}
+      CHAT_MODEL: ${CHAT_MODEL:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      # Retención: los hilos (y sus checkpoints, con los adjuntos) se borran a los 7 días.
+      AEGRA_THREAD_TTL: ${AEGRA_THREAD_TTL:-10080}
+      TRACE_DIR: /data/traces/agent
+      LANGFUSE_ENABLED: ${LANGFUSE_ENABLED:-false}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      LANGFUSE_ENVIRONMENT: ${LANGFUSE_ENVIRONMENT:-local}
+      MODEL_PRICES: ${MODEL_PRICES:-}
+    volumes:
+      - agenttraces:/data/traces
+    ports:
+      - "127.0.0.1:${AGENT_PORT:-2026}:2026"
+    depends_on:
+      agent-db:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    networks: [internal]
+
+  chat-ui:
+    build: ./conversation/chat-ui
+    image: auto-equity/chat-ui:local
+    ports:
+      - "127.0.0.1:${CHAT_UI_PORT:-3000}:3000"
+    depends_on:
+      - agent
+    networks: [internal]
+
+  # Runner de pruebas de navegador de la pantalla del asesor (TDD §11.2). Solo con
+  # `--profile test`; sin puertos.
+  ui-tests:
+    profiles: [test]
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+    image: auto-equity/ui-tests:local
+    environment:
+      E2E_API_URL: http://api:8000
+      E2E_CREDENTIALS: /data/demo-credentials.json
+      E2E_SCREENSHOTS: /e2e/reports/screenshots
+    volumes:
+      - apidata:/data:ro
+      - ./reports:/e2e/reports
+    depends_on:
+      api:
+        condition: service_healthy
+    networks: [internal]
+
+volumes:
+  pgdata:
+  miniodata:
+  apidata:
+  agentdata:
+  agenttraces:
+
+networks:
+  internal:

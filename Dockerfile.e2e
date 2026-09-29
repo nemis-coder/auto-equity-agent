@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1.7
+# Runner de pruebas de navegador (perfil `test`). No es un componente de la aplicación.
+# La imagen oficial fija Playwright 1.63.0 y sus navegadores; coincide con requirements/e2e.lock.
+FROM mcr.microsoft.com/playwright/python:v1.63.0-noble
+
+ENV PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_BREAK_SYSTEM_PACKAGES=1
+WORKDIR /e2e
+COPY requirements/e2e.lock requirements/
+RUN --mount=type=secret,id=extra_ca,required=false \
+    if [ -s /run/secrets/extra_ca ]; then export PIP_CERT=/run/secrets/extra_ca; fi; \
+    pip install --require-hashes -r requirements/e2e.lock
+COPY pyproject.toml ./
+COPY tests/__init__.py tests/conftest.py tests/
+COPY tests/e2e_ui tests/e2e_ui
+COPY fixtures/documents fixtures/documents
+CMD ["python", "-m", "pytest", "tests/e2e_ui", "-q", "-p", "no:cacheprovider"]

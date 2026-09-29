@@ -1,0 +1,9 @@
+{
+  "_comment": "Cotización sintética de segunda llave (TDD S2): costo final inclusivo, vigencia 7 días. Clave: prefijo de vehicle_ref.",
+  "default": {"behavior": "OK", "amount": "3000.00", "currency": "MXN", "validity_days": 7},
+  "by_vehicle_ref_prefix": {
+    "MALQ": {"behavior": "OK", "amount": "-10.00", "currency": "MXN", "validity_days": 7},
+    "USDQ": {"behavior": "OK", "amount": "150.00", "currency": "USD", "validity_days": 7},
+    "SLOW": {"behavior": "TIMEOUT_ONCE", "amount": "3000.00", "currency": "MXN", "validity_days": 7}
+  }
+}

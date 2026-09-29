@@ -1,0 +1,16 @@
+from __future__ import annotations
+
+from datetime import datetime
+from typing import Protocol
+
+
+class StorageError(Exception):
+    """El almacenamiento no respondió o el objeto no es íntegro."""
+
+
+class DocumentStore(Protocol):
+    async def put(self, key: str, content: bytes, sha256: str) -> None: ...
+    async def get(self, key: str, sha256: str) -> bytes: ...
+    async def delete(self, key: str) -> None: ...
+    async def check_ready(self) -> None: ...
+    async def list_objects(self, prefix: str) -> list[tuple[str, datetime]]: ...

@@ -1,0 +1,39 @@
+# Only disposable validation stacks: unique images, volumes and no published ports.
+# COMPOSE_PROJECT_NAME must also start with auto-equity-ci- (see docs/auto_equity_TDD.md section 11.4).
+services:
+  api:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/api:local
+    ports: !reset []
+    environment:
+      APP_MODE: demo
+      CLOCK_MODE: fixed
+      FIXED_NOW: "2026-09-24T12:00:00Z"
+      EXTRACTION_PROVIDER: fake
+      EXTRACTION_MODEL: ""
+      OPENAI_API_KEY: ""
+      ANTHROPIC_API_KEY: ""
+      LANGFUSE_ENABLED: "false"
+      LANGFUSE_PUBLIC_KEY: ""
+      LANGFUSE_SECRET_KEY: ""
+      RATE_LIMIT_PER_MINUTE: "1000"
+      READ_RATE_LIMIT_PER_MINUTE: "1000"
+  setup:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/api:local
+  minio-init:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/api:local
+  minio:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/minio:local
+  agent:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/agent:local
+    ports: !reset []
+    environment:
+      CHAT_PROVIDER: ""
+      CHAT_MODEL: ""
+      OPENAI_API_KEY: ""
+      ANTHROPIC_API_KEY: ""
+      LANGFUSE_ENABLED: "false"
+      LANGFUSE_PUBLIC_KEY: ""
+      LANGFUSE_SECRET_KEY: ""
+  chat-ui:
+    image: ${COMPOSE_PROJECT_NAME:?Set a disposable CI project}/chat-ui:local
+    ports: !reset []

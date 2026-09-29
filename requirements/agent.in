@@ -1,0 +1,11 @@
+# Versiones directas del entorno validado; resolución completa y hashes en agent.lock.
+aegra-cli==0.10.5
+aegra-api==0.10.5
+langchain-anthropic==1.7.4
+langchain-openai==1.6.6
+langchain-core==1.6.5
+langfuse==4.15.6
+httpx==0.28.1
+# Importado directamente por el manejo de errores del grafo.
+anthropic==1.9.0
+openai==3.19.2

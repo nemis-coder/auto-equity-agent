@@ -1,0 +1,27 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/
+# Local study material and generated artifacts; not part of the challenge submission.
+/output/
+reports/*
+!reports/.gitkeep
+# Artefactos de evidencia de §8.3 (generados con scripts/run_evals.py y revisados antes de publicar)
+!reports/eval_summary.json
+!reports/eval_summary.md
+!reports/real_ai_summary.json
+!reports/real_ai_summary.md
+!reports/traces/
+!reports/screenshots/
+!reports/langfuse/
+!reports/revision_manual_trazas.md
+docker-compose.override.yml
+.e2e/
+reports/screenshots/_fallo.png
+
+# macOS
+.DS_Store

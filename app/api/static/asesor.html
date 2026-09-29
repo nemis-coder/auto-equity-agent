@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Equity · Asesor</title>
+  <link rel="stylesheet" href="/asesor/asesor.css">
+</head>
+<body>
+  <header>
+    <h1>Auto Equity · Asesor</h1>
+    <span id="who"></span>
+    <button id="logout" type="button" hidden>Salir</button>
+  </header>
+  <main>
+    <section id="login" class="card">
+      <h2>Entrar</h2>
+      <p class="muted">Escribe tu token de asesor. Se guarda solo en esta pestaña.</p>
+      <label for="token">Token</label>
+      <input id="token" type="password" autocomplete="off">
+      <button id="enter" type="button">Entrar</button>
+    </section>
+    <div id="flash" role="status" aria-live="polite"></div>
+    <div id="app" hidden>
+      <section class="card">
+        <h2>Bandeja de revisiones <span id="inbox-count"></span></h2>
+        <div id="inbox"></div>
+      </section>
+      <section class="card">
+        <h2>Caso</h2>
+        <select id="case-select" aria-label="Caso"></select>
+        <div id="case"></div>
+      </section>
+    </div>
+  </main>
+  <script id="texts" type="application/json">__TEXTS__</script>
+  <script src="/asesor/asesor.js"></script>
+</body>
+</html>

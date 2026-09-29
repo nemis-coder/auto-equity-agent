@@ -1,0 +1,14 @@
+{
+  "policy_version": "demo_policy_v1",
+  "disclaimer": "Política sintética de demostración (TDD S1–S3). No es política de Kavak/Kuna.",
+  "currency": "MXN",
+  "bureau_score_range": [300, 850],
+  "profiles": [
+    {"name": "A", "min_score": 700, "max_score": 850, "annual_nominal_rate": "0.24", "max_financed_principal": "100000.00"},
+    {"name": "B", "min_score": 600, "max_score": 699, "annual_nominal_rate": "0.36", "max_financed_principal": "50000.00"}
+  ],
+  "review_below_score": 600,
+  "review_if_delinquencies_last_12m_above": 0,
+  "max_payment_to_income_ratio": "0.30",
+  "profile_validity_days": 30
+}

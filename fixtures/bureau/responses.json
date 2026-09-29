@@ -1,0 +1,41 @@
+{
+  "_comment": "Buró sintético (TDD S1). Clave: nombre normalizado (casefold, sin tildes). No es el algoritmo real del Buró.",
+  "default": {
+    "behavior": "OK",
+    "response": {"status": "OK", "score": 680, "history_summary": {"open_trades": 1, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "60000.00"}}
+  },
+  "identities": {
+    "ana prueba lopez": {
+      "behavior": "OK",
+      "response": {"status": "OK", "score": 720, "history_summary": {"open_trades": 2, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "beto ejemplo ruiz": {
+      "behavior": "OK",
+      "response": {"status": "OK", "score": 735, "history_summary": {"open_trades": 3, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "carla timeout prueba": {
+      "behavior": "TIMEOUT_ONCE",
+      "response": {"status": "OK", "score": 710, "history_summary": {"open_trades": 1, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "diego perdido prueba": {
+      "behavior": "LOST_RESPONSE_ONCE",
+      "response": {"status": "OK", "score": 705, "history_summary": {"open_trades": 1, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "elena malformada prueba": {
+      "behavior": "OK",
+      "response": {"status": "OK", "score": 900, "history_summary": {"open_trades": 1, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "fer revision prueba": {
+      "behavior": "OK",
+      "response": {"status": "REVIEW", "score": 690, "history_summary": {"open_trades": 1, "delinquencies_last_12m": 0}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "gabo moroso prueba": {
+      "behavior": "OK",
+      "response": {"status": "OK", "score": 710, "history_summary": {"open_trades": 4, "delinquencies_last_12m": 2}, "conditions": {"currency": "MXN", "max_financed_principal": "100000.00"}}
+    },
+    "hugo siempre caido": {
+      "behavior": "ALWAYS_TIMEOUT",
+      "response": null
+    }
+  }
+}

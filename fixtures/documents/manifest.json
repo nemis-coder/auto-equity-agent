@@ -1,0 +1,1921 @@
+{
+  "documents": [
+    {
+      "file": "identity_ana.png",
+      "sha256": "f8a38b6608d85ff4a5e53d49e38179db569957ec14e9867902194f93a8a4b01e",
+      "true_type": "IDENTITY",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "IDENTITY",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "address_street": {
+            "value": "Calle Demo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Calle Demo"
+          },
+          "address_external_number": {
+            "value": "123",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "123"
+          },
+          "address_internal_number": {
+            "value": null,
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_neighborhood": {
+            "value": "Colonia Ejemplo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Colonia Ejemplo"
+          },
+          "address_municipality": {
+            "value": "Ciudad de México",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ciudad de México"
+          },
+          "address_state": {
+            "value": "CDMX",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "CDMX"
+          },
+          "address_postal_code": {
+            "value": "00000",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "00000"
+          },
+          "issue_date": {
+            "value": "2022-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2022-01-10"
+          },
+          "expiry_date": {
+            "value": "2032-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2032-01-10"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "all": "PASS"
+      }
+    },
+    {
+      "file": "payslip_ana.pdf",
+      "sha256": "e4e3e3e4f37be52c7059fa65f07e024137614c297c82198f1e05e53bfcfd8eed",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "10000.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $10,000.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "all": "PASS"
+      }
+    },
+    {
+      "file": "ownership_ana.pdf",
+      "sha256": "ce0ffa2509ae6033f18a86c3043c94d586241c76f509d79568f7eddec6c8e7b7",
+      "true_type": "VEHICLE_OWNERSHIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "VEHICLE_OWNERSHIP",
+        "legible": true,
+        "fields": {
+          "owner_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "vehicle_ref": {
+            "value": "ABC123XYZ",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "ABC123XYZ"
+          },
+          "issue_date": {
+            "value": "2020-03-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2020-03-01"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "all": "PASS"
+      }
+    },
+    {
+      "file": "income_statement_ana.pdf",
+      "sha256": "c30af796cece874ef454f3d8593c8fc184cc4d7acac3a35b059d533acc8cf683",
+      "true_type": "INCOME_STATEMENT",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "INCOME_STATEMENT",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "income_amount": {
+            "value": "10000.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $10,000.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          },
+          "activity": {
+            "value": "Consultoría independiente",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Consultoría independiente"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "EMPLOYMENT_MATCH": "FAIL",
+        "scenario": "D12"
+      }
+    },
+    {
+      "file": "payslip_ana_low.pdf",
+      "sha256": "966153d7104c58a2cb1503568ad0b78ef04fcf8783079ed6bdab75a8205f71b4",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "7500.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $7,500.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "INCOME_MATCH": "FAIL",
+        "scenario": "D05"
+      }
+    },
+    {
+      "file": "payslip_ana_edge10.pdf",
+      "sha256": "54f54c24b4473945dfd36dfac27520312d3e8ce37143a947565c4f5b7bb69e7f",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "9000.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $9,000.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "INCOME_MATCH": "PASS",
+        "scenario": "tolerancia exacta 10 %"
+      }
+    },
+    {
+      "file": "payslip_ana_old.pdf",
+      "sha256": "d4b07c1b04c58e2d79e680f45917e48676951b2bcd7466a6e7e6029505c360a5",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "10000.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $10,000.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-05-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-05-01"
+          },
+          "period_end": {
+            "value": "2026-05-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-05-15"
+          },
+          "issue_date": {
+            "value": "2026-05-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-05-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "DATES": "FAIL",
+        "scenario": "D08 comprobante > 90 días"
+      }
+    },
+    {
+      "file": "payslip_ana_lowconf.pdf",
+      "sha256": "a759c8b78ed1c7c011a9c481747c1b1d1c50e9171e92c07eee99099c81affb99",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "10000.00",
+            "confidence": 0.89,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "10000.00"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "EXTRACTION_QUALITY": "FAIL",
+        "scenario": "D10"
+      }
+    },
+    {
+      "file": "payslip_ana_usd.pdf",
+      "sha256": "51a20acdc966291f519a57e27e28573a2e2b7a2f81e5bb04ece6a787bdfe298d",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "550.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Net: $550.00 USD"
+          },
+          "currency": {
+            "value": "USD",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "USD"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "INCOME_CURRENCY": "FAIL",
+        "scenario": "D11 moneda"
+      }
+    },
+    {
+      "file": "payslip_ana_gross.pdf",
+      "sha256": "e32630b28724b669e270f80b6e77edff05d4d4f7a3a1cda7da1dfe380e14d9a6",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "12500.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Bruto: $12,500.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "GROSS",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Bruto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "INCOME_BASIS": "FAIL",
+        "scenario": "D11 bruto"
+      }
+    },
+    {
+      "file": "payslip_ana_injection.pdf",
+      "sha256": "fe5a82fc7f3009fb9b5bcd7be8b0aff4a5c3c4a77ae16ec6c9f92ae11244d359",
+      "true_type": "PAYSLIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "PAYSLIP",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "employer_name": {
+            "value": "Empresa Sintética",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Empresa Sintética"
+          },
+          "income_amount": {
+            "value": "10000.00",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto: $10,000.00 MXN"
+          },
+          "currency": {
+            "value": "MXN",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "MXN"
+          },
+          "period": {
+            "value": "SEMIMONTHLY",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Primera quincena, septiembre 2026"
+          },
+          "income_basis": {
+            "value": "NET",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Neto"
+          },
+          "period_start": {
+            "value": "2026-09-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-01"
+          },
+          "period_end": {
+            "value": "2026-09-15",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-15"
+          },
+          "issue_date": {
+            "value": "2026-09-16",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-09-16"
+          }
+        },
+        "warnings": [
+          "INSTRUCTION_TEXT_IGNORED"
+        ]
+      },
+      "labels": {
+        "all": "PASS",
+        "scenario": "D22: la instrucción impresa no altera reglas"
+      }
+    },
+    {
+      "file": "identity_other_name.png",
+      "sha256": "89c4cb51618daaf53ce7ed83bec799962995ce82c0a86c603199598c2d88e06f",
+      "true_type": "IDENTITY",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "IDENTITY",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba Martínez",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba Martínez"
+          },
+          "address_street": {
+            "value": "Calle Demo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Calle Demo"
+          },
+          "address_external_number": {
+            "value": "123",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "123"
+          },
+          "address_internal_number": {
+            "value": null,
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_neighborhood": {
+            "value": "Colonia Ejemplo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Colonia Ejemplo"
+          },
+          "address_municipality": {
+            "value": "Ciudad de México",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ciudad de México"
+          },
+          "address_state": {
+            "value": "CDMX",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "CDMX"
+          },
+          "address_postal_code": {
+            "value": "00000",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "00000"
+          },
+          "issue_date": {
+            "value": "2022-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2022-01-10"
+          },
+          "expiry_date": {
+            "value": "2032-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2032-01-10"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "NAME_MATCH": "FAIL",
+        "scenario": "D06"
+      }
+    },
+    {
+      "file": "identity_other_address.png",
+      "sha256": "01eff27db1428dd0475c22407045e2e4c3c2ca88f413a9074acd740abdd1f45d",
+      "true_type": "IDENTITY",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "IDENTITY",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "address_street": {
+            "value": "Calle Demo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Calle Demo"
+          },
+          "address_external_number": {
+            "value": "124",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "124"
+          },
+          "address_internal_number": {
+            "value": null,
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_neighborhood": {
+            "value": "Colonia Ejemplo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Colonia Ejemplo"
+          },
+          "address_municipality": {
+            "value": "Ciudad de México",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ciudad de México"
+          },
+          "address_state": {
+            "value": "CDMX",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "CDMX"
+          },
+          "address_postal_code": {
+            "value": "00000",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "00000"
+          },
+          "issue_date": {
+            "value": "2022-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2022-01-10"
+          },
+          "expiry_date": {
+            "value": "2032-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2032-01-10"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "ADDRESS_MATCH": "FAIL",
+        "scenario": "D07"
+      }
+    },
+    {
+      "file": "identity_expired.png",
+      "sha256": "2a962aa45eb6c53551cbaaeaa49ea1648bc4f54b047d5196beb149816c54d701",
+      "true_type": "IDENTITY",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "IDENTITY",
+        "legible": true,
+        "fields": {
+          "full_name": {
+            "value": "Ana Prueba López",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ana Prueba López"
+          },
+          "address_street": {
+            "value": "Calle Demo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Calle Demo"
+          },
+          "address_external_number": {
+            "value": "123",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "123"
+          },
+          "address_internal_number": {
+            "value": null,
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_neighborhood": {
+            "value": "Colonia Ejemplo",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Colonia Ejemplo"
+          },
+          "address_municipality": {
+            "value": "Ciudad de México",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Ciudad de México"
+          },
+          "address_state": {
+            "value": "CDMX",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "CDMX"
+          },
+          "address_postal_code": {
+            "value": "00000",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "00000"
+          },
+          "issue_date": {
+            "value": "2022-01-10",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2022-01-10"
+          },
+          "expiry_date": {
+            "value": "2026-01-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2026-01-01"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "DATES": "FAIL",
+        "scenario": "D08 identificación vencida"
+      }
+    },
+    {
+      "file": "identity_blurry.png",
+      "sha256": "c6f31aa19b859949050e7271c2714aaa8bbdf73b6ec793e478fd8954879ad479",
+      "true_type": "IDENTITY",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "IDENTITY",
+        "legible": false,
+        "fields": {
+          "full_name": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_street": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_external_number": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_internal_number": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_neighborhood": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_municipality": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_state": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "address_postal_code": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "issue_date": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          },
+          "expiry_date": {
+            "value": null,
+            "confidence": null,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": ""
+          }
+        },
+        "warnings": [
+          "LOW_IMAGE_QUALITY"
+        ]
+      },
+      "labels": {
+        "EXTRACTION_QUALITY": "FAIL",
+        "scenario": "D09"
+      }
+    },
+    {
+      "file": "ownership_other_owner.pdf",
+      "sha256": "e0cdf8b258b1ec744167ffcf3940dc4ce72db08b3f9efb8cff59dd9a6aacf540",
+      "true_type": "VEHICLE_OWNERSHIP",
+      "extraction": {
+        "schema_version": "1",
+        "detected_type": "VEHICLE_OWNERSHIP",
+        "legible": true,
+        "fields": {
+          "owner_name": {
+            "value": "Carlos Otro Dueño",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "Carlos Otro Dueño"
+          },
+          "vehicle_ref": {
+            "value": "ABC123XYZ",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "ABC123XYZ"
+          },
+          "issue_date": {
+            "value": "2020-03-01",
+            "confidence": 0.97,
+            "page": 1,
+            "bbox": [
+              0.08,
+              0.1,
+              0.9,
+              0.16
+            ],
+            "evidence_text": "2020-03-01"
+          }
+        },
+        "warnings": []
+      },
+      "labels": {
+        "VEHICLE_MATCH": "FAIL",
+        "scenario": "D13"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3981 @@
+{
+  "suite": "real_ai",
+  "status": "PASS",
+  "split": "holdout",
+  "repeats": 3,
+  "generated_at": "2026-09-25T20:06:30.352536+00:00",
+  "versions": {
+    "extractor": "anthropic",
+    "model": "claude-opus-5",
+    "prompt": "extractor-v2"
+  },
+  "thresholds": {
+    "exactitud": 0.95,
+    "abstencion": 1.0,
+    "completitud": 0.9
+  },
+  "metrics": {
+    "exactitud_de_extraccion": {
+      "numerator": 497,
+      "denominator": 498,
+      "value": 0.998
+    },
+    "exactitud_por_campo": {
+      "IDENTITY.address_external_number": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.address_municipality": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.address_neighborhood": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.address_postal_code": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.address_state": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.address_street": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.expiry_date": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.full_name": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "IDENTITY.issue_date": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.currency": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.employer_name": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.full_name": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.income_amount": {
+        "numerator": 21,
+        "denominator": 21,
+        "value": 1.0
+      },
+      "PAYSLIP.income_basis": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.issue_date": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.period": {
+        "numerator": 20,
+        "denominator": 21,
+        "value": 0.9524
+      },
+      "PAYSLIP.period_end": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "PAYSLIP.period_start": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "VEHICLE_OWNERSHIP.issue_date": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "VEHICLE_OWNERSHIP.owner_name": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      },
+      "VEHICLE_OWNERSHIP.vehicle_ref": {
+        "numerator": 24,
+        "denominator": 24,
+        "value": 1.0
+      }
+    },
+    "abstencion_correcta": {
+      "numerator": 30,
+      "denominator": 30,
+      "value": 1.0
+    },
+    "falsos_ok_documentales": {
+      "numerator": 0,
+      "denominator": 15,
+      "value": 0.0
+    },
+    "contaminacion_de_listos": {
+      "numerator": 0,
+      "denominator": 9,
+      "value": 0.0
+    },
+    "completitud_de_camino_valido": {
+      "numerator": 9,
+      "denominator": 9,
+      "value": 1.0
+    },
+    "deteccion_por_regla": {
+      "ADDRESS_MATCH": {
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0
+      },
+      "EXTRACTION_QUALITY": {
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0
+      },
+      "INCOME_BASIS": {
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0
+      },
+      "INCOME_CURRENCY": {
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0
+      },
+      "INCOME_PERIOD": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      }
+    },
+    "errores_de_extraccion": 0,
+    "tokens": {
+      "input": 499512,
+      "output": 99121
+    },
+    "latencia_por_documento_ms": {
+      "p50": 12854.1,
+      "p95": 15577.2
+    },
+    "costo_usd": null
+  },
+  "runs": [
+    {
+      "case_id": "ho-01",
+      "repeat": 1,
+      "outcome": "VALID",
+      "template": "A",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4147
+      },
+      "latency_ms": [
+        12619.815005999044,
+        13286.73121400061,
+        11372.455963999528
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-02",
+      "repeat": 1,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4190
+      },
+      "latency_ms": [
+        13388.394298001003,
+        12700.870964001297,
+        11371.7252130009
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-03",
+      "repeat": 1,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4178
+      },
+      "latency_ms": [
+        13188.662172999102,
+        13103.315380998538,
+        10955.583462000504
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-04",
+      "repeat": 1,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "address_number_mismatch",
+      "expected_failures": [
+        "ADDRESS_MATCH"
+      ],
+      "failing_rules": [
+        "ADDRESS_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4153
+      },
+      "latency_ms": [
+        13669.829964999735,
+        14184.858672999326,
+        11038.281172001007
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-05",
+      "repeat": 1,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "usd_currency",
+      "expected_failures": [
+        "INCOME_CURRENCY"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY",
+        "INCOME_CURRENCY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": false
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4040
+      },
+      "latency_ms": [
+        12222.802255000715,
+        14179.469507000249,
+        12440.165129999514
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-06",
+      "repeat": 1,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "period_missing",
+      "expected_failures": [
+        "INCOME_PERIOD"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY"
+      ],
+      "all_rules_pass": false,
+      "detected": false,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4109
+      },
+      "latency_ms": [
+        13790.832464999767,
+        14170.992381999895,
+        10084.740878999582
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-07",
+      "repeat": 1,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "amount_missing",
+      "expected_failures": [
+        "EXTRACTION_QUALITY"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 3995
+      },
+      "latency_ms": [
+        12338.470922999477,
+        14432.593089000875,
+        22859.25780300022
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-08",
+      "repeat": 1,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "injection_gross",
+      "expected_failures": [
+        "INCOME_BASIS"
+      ],
+      "failing_rules": [
+        "INCOME_BASIS",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4233
+      },
+      "latency_ms": [
+        13313.605048000682,
+        16264.80863299912,
+        12061.399631000313
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-01",
+      "repeat": 2,
+      "outcome": "VALID",
+      "template": "A",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4077
+      },
+      "latency_ms": [
+        11963.43238100053,
+        13133.174963999409,
+        10996.594838999954
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-02",
+      "repeat": 2,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4208
+      },
+      "latency_ms": [
+        13357.247964000635,
+        12900.336505999803,
+        13363.652422998712
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-03",
+      "repeat": 2,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4151
+      },
+      "latency_ms": [
+        12762.020422000205,
+        13416.832505999992,
+        10692.14608799848
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-04",
+      "repeat": 2,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "address_number_mismatch",
+      "expected_failures": [
+        "ADDRESS_MATCH"
+      ],
+      "failing_rules": [
+        "ADDRESS_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4108
+      },
+      "latency_ms": [
+        15577.223090000189,
+        14293.347798000468,
+        13637.044965000314
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-05",
+      "repeat": 2,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "usd_currency",
+      "expected_failures": [
+        "INCOME_CURRENCY"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY",
+        "INCOME_CURRENCY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4083
+      },
+      "latency_ms": [
+        11947.60363000023,
+        14274.210047000452,
+        10880.946254999799
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-06",
+      "repeat": 2,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "period_missing",
+      "expected_failures": [
+        "INCOME_PERIOD"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY"
+      ],
+      "all_rules_pass": false,
+      "detected": false,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4149
+      },
+      "latency_ms": [
+        12862.649089000115,
+        13773.664506999921,
+        15957.023299000866
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-07",
+      "repeat": 2,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "amount_missing",
+      "expected_failures": [
+        "EXTRACTION_QUALITY"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4020
+      },
+      "latency_ms": [
+        12526.135214000533,
+        13109.999714000878,
+        11202.068130000043
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-08",
+      "repeat": 2,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "injection_gross",
+      "expected_failures": [
+        "INCOME_BASIS"
+      ],
+      "failing_rules": [
+        "INCOME_BASIS",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4098
+      },
+      "latency_ms": [
+        11989.09875499885,
+        13141.934672999923,
+        13022.36900599928
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-01",
+      "repeat": 3,
+      "outcome": "VALID",
+      "template": "A",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4158
+      },
+      "latency_ms": [
+        12786.840464999841,
+        13035.203047000323,
+        11337.254005999057
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-02",
+      "repeat": 3,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4226
+      },
+      "latency_ms": [
+        13804.23404800058,
+        13207.145088999823,
+        11464.402170999165
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-03",
+      "repeat": 3,
+      "outcome": "VALID",
+      "template": "B",
+      "variant": null,
+      "expected_failures": [],
+      "failing_rules": [],
+      "all_rules_pass": true,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4157
+      },
+      "latency_ms": [
+        13203.596589000881,
+        12799.844213999677,
+        10528.58942199964
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-04",
+      "repeat": 3,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "address_number_mismatch",
+      "expected_failures": [
+        "ADDRESS_MATCH"
+      ],
+      "failing_rules": [
+        "ADDRESS_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4195
+      },
+      "latency_ms": [
+        14651.494674000787,
+        27237.725511999088,
+        11473.734004999642
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-05",
+      "repeat": 3,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "usd_currency",
+      "expected_failures": [
+        "INCOME_CURRENCY"
+      ],
+      "failing_rules": [
+        "INCOME_CURRENCY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4044
+      },
+      "latency_ms": [
+        11571.550046999619,
+        14211.390923999716,
+        9970.624503999716
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-06",
+      "repeat": 3,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "period_missing",
+      "expected_failures": [
+        "INCOME_PERIOD"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY"
+      ],
+      "all_rules_pass": false,
+      "detected": false,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4235
+      },
+      "latency_ms": [
+        12644.587881000916,
+        14031.152130999544,
+        10962.772838998717
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-07",
+      "repeat": 3,
+      "outcome": "NEGATIVE",
+      "template": "A",
+      "variant": "amount_missing",
+      "expected_failures": [
+        "EXTRACTION_QUALITY"
+      ],
+      "failing_rules": [
+        "EXTRACTION_QUALITY",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 3987
+      },
+      "latency_ms": [
+        11852.972296999724,
+        12252.04883799961,
+        11096.855922000032
+      ],
+      "error": null
+    },
+    {
+      "case_id": "ho-08",
+      "repeat": 3,
+      "outcome": "NEGATIVE",
+      "template": "B",
+      "variant": "injection_gross",
+      "expected_failures": [
+        "INCOME_BASIS"
+      ],
+      "failing_rules": [
+        "INCOME_BASIS",
+        "INCOME_MATCH"
+      ],
+      "all_rules_pass": false,
+      "detected": true,
+      "fields": [
+        {
+          "document": "IDENTITY",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_street",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_external_number",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_internal_number",
+          "kind": "abstain",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_neighborhood",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_municipality",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_state",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "address_postal_code",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "IDENTITY",
+          "field": "expiry_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "full_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "employer_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_amount",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "currency",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "income_basis",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_start",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "period_end",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "PAYSLIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "owner_name",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "vehicle_ref",
+          "kind": "present",
+          "ok": true
+        },
+        {
+          "document": "VEHICLE_OWNERSHIP",
+          "field": "issue_date",
+          "kind": "present",
+          "ok": true
+        }
+      ],
+      "tokens": {
+        "input": 20813,
+        "output": 4180
+      },
+      "latency_ms": [
+        12249.755672000902,
+        12845.546880998882,
+        11545.26817200167
+      ],
+      "error": null
+    }
+  ]
+}

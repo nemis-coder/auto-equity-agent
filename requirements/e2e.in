@@ -1,0 +1,3 @@
+# Pruebas de navegador (tests/e2e_ui). Versión fijada: debe coincidir con el Chromium instalado.
+playwright==1.63.0
+pytest

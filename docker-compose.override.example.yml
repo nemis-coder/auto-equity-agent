@@ -1,0 +1,23 @@
+# Opcional: solo para redes con proxy TLS corporativo.
+# Copia este archivo a docker-compose.override.yml (ignorado por git) y ajusta la ruta del CA.
+# El certificado se usa como build secret; no queda en las imágenes.
+secrets:
+  extra_ca:
+    file: /ruta/a/ca-corporativo.pem
+
+services:
+  minio:
+    build:
+      secrets: [extra_ca]
+  minio-init:
+    build:
+      secrets: [extra_ca]
+  setup:
+    build:
+      secrets: [extra_ca]
+  api:
+    build:
+      secrets: [extra_ca]
+  ui-tests:
+    build:
+      secrets: [extra_ca]
